@@ -17,17 +17,26 @@ function getComputerChoise(random) {
     }  
 }
 
-function getHumanChoise(){
-    sign =window.prompt("Let the game begin: write rock, paper or scissor ");
+sign = window.prompt("Let the game begin: write rock, paper or scissor ");
+
+function getHumanChoise(sign){
     return sign
 }
 
 function playRound(getComputerChoise, getHumanChoise) {
-    if (getComputerChoise() === getHumanChoise())
-        return "Sinä voitit!"
+    if (getComputerChoise === paper && getHumanChoise === paper) {
+        return "Tasapeli!"     
+    } else if (getComputerChoise === paper && getHumanChoise === rock) {
+        return "hävisit!"
+    } else if (getComputerChoise === paper && getHumanChoise === scissor) {
+        return "voitit!"
+    }    
 }
+
+console.log(getComputerChoise(random))
+console.log(getHumanChoise(sign))
+console.log(playRound(random, sign))
 
 const humanSelection = getHumanChoise()
 const computerSelection = getComputerChoise()
 
-console.log(playRound)
