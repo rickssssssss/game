@@ -50,10 +50,11 @@ console.log(getHumanChoise(sign))
 console.log(playRound(computerSelection,humanSelection)) */
 
 function playGame() {
-    playRound(computerChoise,humanChoise) 
 
-    
+    for (let i = 1; i < 6; i++)
+    console.log(playRound(computerChoise,humanChoise))
+
 }
     
-/* console.log(playGame) */
+console.log(playGame())
 
