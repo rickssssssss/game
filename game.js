@@ -1,7 +1,3 @@
-const humanscore = 0
-const computerscore = 0
-
-
 const rock = "rock"
 const scissor = "scissor"
 const paper = "paper"
@@ -20,32 +16,44 @@ function getComputerChoise(random) {
 const sign = window.prompt("Let the game begin: write rock, paper or scissor")
 
 function getHumanChoise(sign){
-    return sign
+    return sign 
 }
 
 
-function playRound(getComputerChoise, getHumanChoise) {
-    if (getComputerChoise() === getHumanChoise()) {
-        return "Tasapeli!";    
-    } else if (getComputerChoise() === paper && getHumanChoise() === rock) {
+function playRound(computerChoise, humanChoise) {
+    if (computerChoise === paper && humanChoise === paper) {
+        return "Tasapeli!"; 
+    } else if (computerChoise === rock && humanChoise === rock) {
+        return "Tasapeli!";
+    } else if (computerChoise === scissor && humanChoise === scissor) {
+        return "Tasapeli!;"
+    } else if (computerChoise === paper && humanChoise === rock) {
         return "hävisit!";
-    } else if (getComputerChoise() === paper && getHumanChoise() === scissor) {
+    } else if (computerChoise === paper && humanChoise === scissor) {
         return "voitit!";
-    }  else if (getComputerChoise() === rock && getHumanChoise() === paper) {
+    }  else if (computerChoise === rock && humanChoise === paper) {
         return "voitit!"
-    } else if (getComputerChoise() === rock && getHumanChoise() === scissor) {
+    } else if (computerChoise === rock && humanChoise === scissor) {
         return "hävisit!"
-    } else if (getComputerChoise() === scissor && getHumanChoise() === paper) {
+    } else if (computerChoise === scissor && humanChoise === paper) {
         return "hävisit!"
-    } else if (getComputerChoise() === scissor && getHumanChoise() === rock) {
+    } else if (computerChoise === scissor && humanChoise === rock) {
         return "voitit!"
     }
 }
 
-console.log(getComputerChoise(random))
-console.log(getHumanChoise(sign))
-console.log(playRound)
+const humanSelection = getHumanChoise(sign)
+const computerSelection = getComputerChoise(random)
 
-const humanSelection = getHumanChoise()
-const computerSelection = getComputerChoise()
+/*console.log(getComputerChoise(random))
+console.log(getHumanChoise(sign))
+console.log(playRound(computerSelection,humanSelection)) */
+
+function playGame() {
+    playRound(computerChoise,humanChoise) 
+
+    
+}
+    
+/* console.log(playGame) */
 
