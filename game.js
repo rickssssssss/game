@@ -1,60 +1,75 @@
-const rock = "rock"
-const scissor = "scissor"
-const paper = "paper"
-const random = Math.floor(Math.random() * 3)
+    let rock = "rock"
+    let scissor = "scissor"
+    let paper = "paper"
 
-function getComputerChoise(random) {
+ function getComputerChoise() {
+    let random = Math.floor(Math.random() * 3)
+
     if (random === 0) {
-        return paper
+        return paper;
     } else if (random === 1) {
-        return scissor
+        return scissor;
     } else if (random ===2) {
-        return rock
+        return rock;
     }  
+
 }
 
-const sign = window.prompt("Let the game begin: write rock, paper or scissor")
+// console.log(computer())
 
-function getHumanChoise(sign){
-    return sign 
+function getHumanChoise(){
+    let sign = window.prompt("Let the game begin: write rock, paper or scissor")
+    return sign   
 }
 
+//console.log(human())
 
-function playRound(computerChoise, humanChoise) {
-    if (computerChoise === paper && humanChoise === paper) {
+function playRound() {
+    
+    if (getComputerChoise() === paper && getHumanChoise() === paper) {
         return "Tasapeli!"; 
-    } else if (computerChoise === rock && humanChoise === rock) {
+    } else if (getComputerChoise() === rock && getHumanChoise() === rock) {
         return "Tasapeli!";
-    } else if (computerChoise === scissor && humanChoise === scissor) {
-        return "Tasapeli!;"
-    } else if (computerChoise === paper && humanChoise === rock) {
-        return "hävisit!";
-    } else if (computerChoise === paper && humanChoise === scissor) {
-        return "voitit!";
-    }  else if (computerChoise === rock && humanChoise === paper) {
-        return "voitit!"
-    } else if (computerChoise === rock && humanChoise === scissor) {
-        return "hävisit!"
-    } else if (computerChoise === scissor && humanChoise === paper) {
-        return "hävisit!"
-    } else if (computerChoise === scissor && humanChoise === rock) {
-        return "voitit!"
+    } else if (getComputerChoise() === scissor && getHumanChoise() === scissor) {
+        return "Tasapeli!";
+    } else if (getComputerChoise() === paper && getHumanChoise() === rock) {
+        return "Hävisit!";
+    } else if (getComputerChoise() === paper && getHumanChoise() === scissor) {
+        return "Voitit!";
+    }  else if (getComputerChoise() === rock && getHumanChoise() === paper) {
+        return "Voitit!";
+    } else if (getComputerChoise() === rock && getHumanChoise() === scissor) {
+        return "Hävisit!";
+    } else if (getComputerChoise() === scissor && getHumanChoise() === paper) {
+        return "Hävisit!";
+    } else if (getComputerChoise() === scissor && getHumanChoise() === rock) {
+        return "Voitit!";
     }
 }
 
-const humanSelection = getHumanChoise(sign)
-const computerSelection = getComputerChoise(random)
+playRound()
 
-/*console.log(getComputerChoise(random))
-console.log(getHumanChoise(sign))
-console.log(playRound(computerSelection,humanSelection)) */
+ //oneround(console.log())
 
-function playGame() {
+/* let game = function playGame() {
 
-    for (let i = 1; i < 6; i++)
-    console.log(playRound(computerChoise,humanChoise))
+    let humanscore = 0;
+    let computerscore = 0;
+    let i = 0;
+
+    if (humanscore < 5 || computerscore < 5) {
+        for (let i = 0; i<5; i++) {
+                if (oneround() === "Voitit") {
+                humanscore = humanscore + 1;
+                console.log(humanscore)
+                } else if (oneround() === "Hävisit") {
+                computerscore = computerscore + 1;
+                console.log(computerscore)
+                } 
+        } 
+    } else {
+        alert("moi")
+    }
 
 }
-    
-console.log(playGame())
-
+*/
