@@ -22,54 +22,66 @@ function getHumanChoise(){
     return sign   
 }
 
-//console.log(human())
+
 
 function playRound() {
     
-    if (getComputerChoise() === paper && getHumanChoise() === paper) {
+    let computer = getComputerChoise();
+    let human = getHumanChoise();
+
+    if (computer === paper && human === paper) {
         return "Tasapeli!"; 
-    } else if (getComputerChoise() === rock && getHumanChoise() === rock) {
+    } else if (computer === rock && human === rock) {
         return "Tasapeli!";
-    } else if (getComputerChoise() === scissor && getHumanChoise() === scissor) {
+    } else if (computer === scissor && human === scissor) {
         return "Tasapeli!";
-    } else if (getComputerChoise() === paper && getHumanChoise() === rock) {
+    } else if (computer === paper && human === rock) {
         return "Hävisit!";
-    } else if (getComputerChoise() === paper && getHumanChoise() === scissor) {
+    } else if (computer === paper && human === scissor) {
         return "Voitit!";
-    }  else if (getComputerChoise() === rock && getHumanChoise() === paper) {
+    }  else if (computer === rock && human === paper) {
         return "Voitit!";
-    } else if (getComputerChoise() === rock && getHumanChoise() === scissor) {
+    } else if  (computer === rock && human === scissor) {
         return "Hävisit!";
-    } else if (getComputerChoise() === scissor && getHumanChoise() === paper) {
+    } else if (computer === scissor && human === paper) {
         return "Hävisit!";
-    } else if (getComputerChoise() === scissor && getHumanChoise() === rock) {
+    } else if (computer === scissor && human === rock) {
         return "Voitit!";
     }
 }
 
-playRound()
 
- //oneround(console.log())
 
-/* let game = function playGame() {
+function playGame() {
 
     let humanscore = 0;
     let computerscore = 0;
-    let i = 0;
 
-    if (humanscore < 5 || computerscore < 5) {
-        for (let i = 0; i<5; i++) {
-                if (oneround() === "Voitit") {
-                humanscore = humanscore + 1;
-                console.log(humanscore)
-                } else if (oneround() === "Hävisit") {
-                computerscore = computerscore + 1;
-                console.log(computerscore)
-                } 
-        } 
-    } else {
-        alert("moi")
-    }
+        for (let i = 0; i<10; i++) {
 
-}
-*/
+            let round = playRound();
+
+            if (round === "Hävisit!") {
+                computerscore++
+            } else if (round === "Voitit!") {
+                humanscore++
+            } else if (round === "Tasapeli!") {
+               
+            }
+
+            if (humanscore === 5) {
+                console.log("Voitit")
+                break;
+            } else if (computerscore === 5) {
+                console.log("Hävisit")
+                break;
+            }
+
+        }
+
+        console.log(`round ${i+1}: Human - ${humanscore}, Computer - ${computerscore}`);
+    } 
+
+console.log(playGame());
+
+
