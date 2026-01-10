@@ -56,6 +56,7 @@ function playGame() {
 
     let humanscore = 0;
     let computerscore = 0;
+    let i = 0;
 
         for (let i = 0; i<10; i++) {
 
@@ -63,9 +64,12 @@ function playGame() {
 
             if (round === "Hävisit!") {
                 computerscore++
+                console.log("hävisit tämän kierroksen")
             } else if (round === "Voitit!") {
                 humanscore++
+                console.log("voitit tämän kierroksen")
             } else if (round === "Tasapeli!") {
+                console.log("tasapeli! yritä uudestaan")
                
             }
 
